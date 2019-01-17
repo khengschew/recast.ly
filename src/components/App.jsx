@@ -6,9 +6,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      'video-player':props.videos[0],
-      'video-list':props.videos,
-      'searchYouTube':props.searchYouTube
+      'video-player':props.searchYouTube[0],
+      'video-list':props.searchYouTube
     };
     this.handleClick = this.handleClick.bind(this);
   }
