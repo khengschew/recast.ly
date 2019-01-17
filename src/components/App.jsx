@@ -6,20 +6,17 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      'video-player':props.videos[2],
+      'video-player':props.videos[0],
       'video-list':props.videos,
       'searchYouTube':props.searchYouTube
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(videoId) {
-    // var stuff = Object.create(e);
-    // console.log(e.target);
-    // console.log(e.currentTarget);
-    console.log(videoId);
-    console.log('hello!');
-
+  handleClick(video) {
+    this.setState({
+      'video-player': video
+    });
   }
 
   render() {
