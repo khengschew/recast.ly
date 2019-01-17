@@ -4,6 +4,22 @@ import VideoPlayer from './VideoPlayer.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      'video-player':props.videos[2],
+      'video-list':props.videos,
+      'searchYouTube':props.searchYouTube
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(videoId) {
+    // var stuff = Object.create(e);
+    // console.log(e.target);
+    // console.log(e.currentTarget);
+    console.log(videoId);
+    console.log('hello!');
+
   }
 
   render() {
@@ -16,10 +32,10 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.props.data[0]} />
+            <VideoPlayer video={this.state['video-player']} />
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.props.data} />
+            <VideoList videos={this.state['video-list']} onClickCallback={this.handleClick} />
           </div>
         </div>
       </div>

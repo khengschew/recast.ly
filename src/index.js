@@ -3,5 +3,5 @@ import App from './components/App.js';
 import VideoPlayer from './components/VideoPlayer.js';
 import exampleVideoData from './data/exampleVideoData.js';
 
-ReactDOM.render(<App data={exampleVideoData}/>, document.getElementById('app'));
+ReactDOM.render(<App videos={exampleVideoData}/>, document.getElementById('app'));
 
