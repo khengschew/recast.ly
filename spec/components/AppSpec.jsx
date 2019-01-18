@@ -1,5 +1,4 @@
 import App from './../../src/components/App.js';
-import exampleVideoData from './../../src/data/exampleVideoData.js';
 
 describe('App', function() {
   var {
@@ -13,8 +12,7 @@ describe('App', function() {
 
   beforeEach(function() {
     app = renderIntoDocument(
-      // <App searchYouTube={() => {}}/>
-      <App searchYouTube={exampleVideoData}/>
+      <App searchYouTube={() => {}}/>
     );
   });
 
@@ -56,6 +54,7 @@ describe('App', function() {
     beforeEach(function() {
       searchYouTubeStub = sinon.stub();
       searchYouTubeStub.yields(window.fakeVideoData);
+      console.log(searchYouTubeStub);
       app = renderIntoDocument(
         <App searchYouTube={searchYouTubeStub} />
       );
